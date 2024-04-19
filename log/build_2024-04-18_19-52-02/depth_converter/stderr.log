@@ -1,0 +1,25 @@
+In file included from [01m[K/home/ubuntu/osu-uwrt/development/software/src/depth_converter/src/depth_converter.cpp:6[m[K:
+[01m[K/opt/ros/humble/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.h:35:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+   35 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+[01m[K/home/ubuntu/osu-uwrt/development/software/src/depth_converter/src/depth_converter.cpp:[m[K In constructor ‘[01m[KDepthConverter::DepthConverter()[m[K’:
+[01m[K/home/ubuntu/osu-uwrt/development/software/src/depth_converter/src/depth_converter.cpp:22:44:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ksubstr[m[K’ in ‘[01m[K((DepthConverter*)this)->DepthConverter::<anonymous>.rclcpp::Node::get_namespace()[m[K’, which is of non-class type ‘[01m[Kconst char*[m[K’
+   22 |         namespace_ = this->get_namespace().[01;31m[Ksubstr[m[K(1);
+      |                                            [01;31m[K^~~~~~[m[K
+[01m[K/home/ubuntu/osu-uwrt/development/software/src/depth_converter/src/depth_converter.cpp:[m[K In member function ‘[01m[Kvoid DepthConverter::depth_callback(riptide_msgs2::msg::Depth_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/ubuntu/osu-uwrt/development/software/src/depth_converter/src/depth_converter.cpp:28:46:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class tf2_ros::Buffer[m[K’ {aka ‘[01m[Kclass tf2_ros::Buffer[m[K’} has no member named ‘[01m[Klookup_transform[m[K’; did you mean ‘[01m[KlookupTransform[m[K’?
+   28 |             auto b2o_transform = tf_buffer_->[01;31m[Klookup_transform[m[K("odom", namespace_ + "/base_link", tf2::TimePointZero);
+      |                                              [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |                                              [32m[KlookupTransform[m[K
+[01m[K/home/ubuntu/osu-uwrt/development/software/src/depth_converter/src/depth_converter.cpp:37:55:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class tf2_ros::Buffer[m[K’ {aka ‘[01m[Kclass tf2_ros::Buffer[m[K’} has no member named ‘[01m[Klookup_transform[m[K’; did you mean ‘[01m[KlookupTransform[m[K’?
+   37 |                 auto pressure_transform = tf_buffer_->[01;31m[Klookup_transform[m[K(namespace_ + "/pressure_link", namespace_ + "/base_link", tf2::TimePointZero);
+      |                                                       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |                                                       [32m[KlookupTransform[m[K
+[01m[K/home/ubuntu/osu-uwrt/development/software/src/depth_converter/src/depth_converter.cpp:44:45:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kconst Eigen::CwiseBinaryOp<Eigen::internal::scalar_product_op<double, double>, const Eigen::Matrix<double, 3, 3>, const Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>, const Eigen::Matrix<double, 3, 3> > >[m[K’ to ‘[01m[Kdouble[m[K’ in initialization
+   44 |             double added_depth = [01;31m[Kb2o_matrix * b2p_vector_.value()(2)[m[K;
+      |                                  [01;31m[K~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                             [01;31m[K|[m[K
+      |                                             [01;31m[Kconst Eigen::CwiseBinaryOp<Eigen::internal::scalar_product_op<double, double>, const Eigen::Matrix<double, 3, 3>, const Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>, const Eigen::Matrix<double, 3, 3> > >[m[K
+gmake[2]: *** [CMakeFiles/depth_converter.dir/build.make:76: CMakeFiles/depth_converter.dir/src/depth_converter.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/depth_converter.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
